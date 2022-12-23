@@ -59,7 +59,6 @@ fun DetailsScreen(
 
                 Text(text = "Movies")
             }
-
         }
     }) {
 

@@ -32,10 +32,7 @@ fun HomeScreen(navController: NavController) {
         },
     ) {
         MainContent(navController = navController)
-
-
     }
-
 }
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -53,7 +50,5 @@ fun MainContent(
                 }
             }
         }
-
     }
-
 }

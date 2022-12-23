@@ -34,8 +34,5 @@ fun MovieNavigation() {
                 backStackEntry.arguments?.getString("movie")
             )
         }
-
-
     }
-
 }
