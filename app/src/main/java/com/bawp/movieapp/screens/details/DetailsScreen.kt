@@ -3,10 +3,25 @@ package com.bawp.movieapp.screens.details
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.Divider
+import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
@@ -22,19 +37,23 @@ import com.bawp.movieapp.widgets.MovieRow
 
 @ExperimentalAnimationApi
 @Composable
-fun DetailsScreen(navController: NavController,
-                  movieId: String?) {
+fun DetailsScreen(
+    navController: NavController,
+    movieId: String?
+) {
     val newMovieList = getMovies().filter { movie ->
-          movie.id == movieId
+        movie.id == movieId
     }
     Scaffold(topBar = {
-        TopAppBar(backgroundColor = Color.Transparent,
-            elevation = 0.dp) {
+        TopAppBar(
+            backgroundColor = Color.Transparent,
+            elevation = 0.dp
+        ) {
             Row(horizontalArrangement = Arrangement.Start) {
                 Icon(imageVector = Icons.Default.ArrowBack,
-                    contentDescription ="Arrow Back",
+                    contentDescription = "Arrow Back",
                     modifier = Modifier.clickable {
-                          navController.popBackStack()
+                        navController.popBackStack()
                     })
                 Spacer(modifier = Modifier.width(100.dp))
 
@@ -44,33 +63,39 @@ fun DetailsScreen(navController: NavController,
         }
     }) {
 
-        Surface(modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth()) {
-     Column(horizontalAlignment = Alignment.CenterHorizontally,
-           verticalArrangement = Arrangement.Top) {
+        Surface(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth()
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Top
+            ) {
 
-         MovieRow(movie = newMovieList.first())
-         Spacer(modifier = Modifier.height(8.dp))
-         Divider()
-         Text(text = "Movie Images")
-         HorizontalScrollableImageView(newMovieList)
-     }
+                MovieRow(movie = newMovieList.first())
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+                Text(text = "Movie Images")
+                HorizontalScrollableImageView(newMovieList)
+            }
+        }
     }
-    }
-
-
-
-
 }
 
 @Composable
 private fun HorizontalScrollableImageView(newMovieList: List<Movie>) {
     LazyRow {
         items(newMovieList[0].images) { image ->
-            Card(modifier = Modifier.padding(12.dp).size(240.dp), elevation = 5.dp) {
-                Image(painter = rememberImagePainter(data = image),
-                    contentDescription = "Movie Poster")
+            Card(
+                modifier = Modifier
+                    .padding(12.dp)
+                    .size(240.dp), elevation = 5.dp
+            ) {
+                Image(
+                    painter = rememberImagePainter(data = image),
+                    contentDescription = "Movie Poster"
+                )
 
             }
         }

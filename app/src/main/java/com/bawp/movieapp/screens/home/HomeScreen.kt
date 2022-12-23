@@ -1,6 +1,6 @@
 package com.bawp.movieapp.screens.home
 
-import android.util.Log
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,29 +20,35 @@ import com.bawp.movieapp.widgets.MovieRow
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    Scaffold(topBar = {
-        TopAppBar(backgroundColor = Color.Transparent,
-            elevation = 0.dp) {
-            Text(text = "Movies")
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                backgroundColor = Color.Transparent,
+                elevation = 0.dp
+            ) {
+                Text(text = "Movies")
 
-        }
-    },) {
-         MainContent(navController = navController)
+            }
+        },
+    ) {
+        MainContent(navController = navController)
 
 
     }
 
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun MainContent(
     navController: NavController,
-    movieList: List<Movie> = getMovies()) {
+    movieList: List<Movie> = getMovies()
+) {
     Column(modifier = Modifier.padding(12.dp)) {
         LazyColumn {
             items(items = movieList) {
-                MovieRow(movie = it){ movie ->
-                    navController.navigate(route = MovieScreens.DetailsScreen.name+"/$movie")
+                MovieRow(movie = it) { movie ->
+                    navController.navigate(route = MovieScreens.DetailsScreen.name + "/$movie")
 
                 }
             }
