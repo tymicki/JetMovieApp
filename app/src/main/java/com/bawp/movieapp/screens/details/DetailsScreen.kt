@@ -56,7 +56,6 @@ fun DetailsScreen(
                         navController.popBackStack()
                     })
                 Spacer(modifier = Modifier.width(100.dp))
-
                 Text(text = "Movies")
             }
         }
