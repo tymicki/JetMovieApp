@@ -18,17 +18,15 @@ fun MovieNavigation() {
         navController = navController,
         startDestination = MovieScreens.HomeScreen.name
     ) {
-
         composable(MovieScreens.HomeScreen.name) {
             //here we pass where this should lead us to
             HomeScreen(navController = navController)
         }
-
         //www.google.com/detail-screen/id=34
-        composable(MovieScreens.DetailsScreen.name + "/{movie}",
+        composable(
+            MovieScreens.DetailsScreen.name + "/{movie}",
             arguments = listOf(navArgument(name = "movie") { type = NavType.StringType })
         ) { backStackEntry ->
-
             DetailsScreen(
                 navController = navController,
                 backStackEntry.arguments?.getString("movie")

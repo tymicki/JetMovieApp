@@ -27,7 +27,6 @@ fun HomeScreen(navController: NavController) {
                 elevation = 0.dp
             ) {
                 Text(text = "Movies")
-
             }
         },
     ) {
@@ -46,7 +45,6 @@ fun MainContent(
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
                     navController.navigate(route = MovieScreens.DetailsScreen.name + "/$movie")
-
                 }
             }
         }

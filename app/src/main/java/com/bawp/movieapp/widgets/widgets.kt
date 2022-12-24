@@ -56,10 +56,8 @@ fun MovieRow(
         modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth()
-            //.height(130.dp)
             .clickable {
                 onItemClick(movie.id)
-
             },
         shape = RoundedCornerShape(corner = CornerSize(16.dp)),
         elevation = 6.dp
@@ -83,10 +81,6 @@ fun MovieRow(
                         }),
                     contentDescription = "Movie Poster"
                 )
-
-//                Icon(imageVector = Icons.Default.AccountBox,
-//                    contentDescription = "Movie Image")
-
             }
             Column(modifier = Modifier.padding(4.dp)) {
                 Text(
@@ -101,7 +95,6 @@ fun MovieRow(
                     text = "Released: ${movie.year}",
                     style = MaterialTheme.typography.caption
                 )
-
                 AnimatedVisibility(visible = expanded) {
                     Column {
                         Text(buildAnnotatedString {
@@ -122,19 +115,13 @@ fun MovieRow(
                             ) {
                                 append(movie.plot)
                             }
-
                         }, modifier = Modifier.padding(6.dp))
-
                         Divider(modifier = Modifier.padding(3.dp))
                         Text(text = "Director: ${movie.director}", style = MaterialTheme.typography.caption)
                         Text(text = "Actors: ${movie.actors}", style = MaterialTheme.typography.caption)
                         Text(text = "Rating: ${movie.rating}", style = MaterialTheme.typography.caption)
-
                     }
                 }
-
-
-
                 Icon(
                     imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else
                         Icons.Filled.KeyboardArrowDown,
@@ -147,12 +134,6 @@ fun MovieRow(
                     tint = Color.DarkGray
                 )
             }
-
-
         }
-
-
     }
-
-
 }

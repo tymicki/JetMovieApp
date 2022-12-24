@@ -33,7 +33,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "7.9"
         ),
-
         Movie(
             id = "tt0416449",
             title = "300",
@@ -51,7 +50,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "7.7"
         ),
-
         Movie(
             id = "tt0848228",
             title = "The Avengers",
@@ -70,7 +68,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "8.1"
         ),
-
         Movie(
             id = "tt0993846",
             title = "The Wolf of Wall Street",
@@ -89,7 +86,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "8.2"
         ),
-
         Movie(
             id = "tt0816692",
             title = "Interstellar",
@@ -126,8 +122,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "9.5"
         ),
-
-
         Movie(
             id = "tt2306299",
             title = "Vikings",
@@ -146,7 +140,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "9.5"
         ),
-
         Movie(
             id = "tt0903747",
             title = "Breaking Bad",
@@ -165,7 +158,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "9.5"
         ),
-
         Movie(
             id = "tt2707408",
             title = "Narcos",
@@ -184,7 +176,6 @@ fun getMovies(): List<Movie> {
             ),
             rating = "9.5"
         ),
-
-        )
+    )
 }
 

@@ -61,7 +61,6 @@ fun DetailsScreen(
             }
         }
     }) {
-
         Surface(
             modifier = Modifier
                 .fillMaxHeight()

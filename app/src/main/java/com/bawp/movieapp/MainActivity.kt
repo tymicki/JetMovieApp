@@ -23,10 +23,7 @@ class MainActivity : ComponentActivity() {
 fun MyApp(content: @Composable () -> Unit) {
     MovieAppTheme {
         content()
-
-
     }
-
 }
 
 @Preview(showBackground = true)
