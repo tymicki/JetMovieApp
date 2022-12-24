@@ -94,7 +94,6 @@ private fun HorizontalScrollableImageView(newMovieList: List<Movie>) {
                     painter = rememberImagePainter(data = image),
                     contentDescription = "Movie Poster"
                 )
-
             }
         }
     }

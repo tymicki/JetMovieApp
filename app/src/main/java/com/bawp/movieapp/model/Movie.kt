@@ -178,4 +178,3 @@ fun getMovies(): List<Movie> {
         ),
     )
 }
-
